@@ -24,7 +24,7 @@ class CalculatorTests: XCTestCase {
         anotherCalculator = Calculator(items: [
             (Item(label: "Pencil", price: 0.99), 40000), //39600 at 10% = 3960
             (Item(label: "Ballpen", price: 2.49), 80000) //199200 at 15% = 29880
-            ], stateTax: StateTax("UT", 6.85))
+            ], stateTax: StateTax("CA", 8.25))
     }
 
     override func tearDown() {
@@ -58,7 +58,20 @@ class CalculatorTests: XCTestCase {
             return
         }
         XCTAssertEqual(anotherCalculator.getTotalValueWithoutTaxes(), 238800.0, accuracy: 0.000000001)
+    }
+    
+    func testItemsTaxValue() {
+        guard let aCalculator = aCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(aCalculator.getTaxesValue(), 931517.8, accuracy: 0.000000001)
         
+        guard let anotherCalculator = anotherCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(anotherCalculator.getTaxesValue(), 19701.0, accuracy: 0.000000001)
     }
 
 }

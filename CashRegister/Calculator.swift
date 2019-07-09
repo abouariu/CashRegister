@@ -57,4 +57,13 @@ struct Calculator {
     func getTotalValueWithoutTaxes() -> Double {
         return items.reduce(0, { $0 + $1.0.price * Double($1.1) })
     }
+    
+    /**
+     Determines the total tax value for all items.
+     Returns: Total tax value (Double)
+     */
+    func getTaxesValue() -> Double {
+        return getTotalValueWithoutTaxes() * stateTax.tax / 100.0
+    }
+    
 }
