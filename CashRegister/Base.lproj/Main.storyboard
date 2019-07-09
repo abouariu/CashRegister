@@ -361,6 +361,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6E-Vi-md3"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="mri-gq-fT8" id="fft-jJ-8Yb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRn-hg-uY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

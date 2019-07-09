@@ -10,13 +10,15 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
+    
     var items: [(Item, Int)]!
     var stateTax: StateTax!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        tableView.accessibilityIdentifier = "checkoutTableView"
     }
     
     @IBAction func backButtonTouched(_ sender: UIButton) {
