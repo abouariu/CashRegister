@@ -9,8 +9,8 @@
 import Foundation
 
 struct StateTax {
-    let state: String
-    let tax: Double
+    public let state: String
+    public let tax: Double
     
     init(_ state: String, _ tax: Double) {
         self.state = state

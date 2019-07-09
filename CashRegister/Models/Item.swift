@@ -9,13 +9,11 @@
 import Foundation
 
 struct Item {
-    
     public let label: String
     public let price: Double
     
     init(label: String, price: Double) {
         self.label = label
         self.price = price
-    }
-    
+    }    
 }
