@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemsViewController: UIViewController {
-
+    
     @IBOutlet var labelTextField: UITextField!
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var quantityTextField: UITextField!
@@ -18,9 +18,9 @@ class ItemsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     @IBAction func cancelButtonTouched(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

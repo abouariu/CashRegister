@@ -47,6 +47,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pPC-X7-TmW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="chG-IB-3oA"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Q5-or-Mvd">
                                 <rect key="frame" x="16" y="756" width="90" height="90"/>
@@ -110,6 +114,10 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrV-Gg-IDQ">
                                 <rect key="frame" x="0.0" y="896" width="414" height="216"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="k4n-Jc-zb4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lpl-9U-kg1"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -154,7 +162,7 @@
                                 <rect key="frame" x="16" y="60" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5r-LG-mvr">
                                 <rect key="frame" x="16" y="106" width="382" height="30"/>
@@ -247,25 +255,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gy-gI-GVI">
-                                                    <rect key="frame" x="20" y="11.5" width="87.5" height="21"/>
+                                                    <rect key="frame" x="20" y="11.5" width="66.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAT-gF-pep">
-                                                    <rect key="frame" x="115.5" y="11.5" width="87.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAT-gF-pep">
+                                                    <rect key="frame" x="94.5" y="11.5" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dln-GJ-bY8">
-                                                    <rect key="frame" x="211" y="11.5" width="87.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dln-GJ-bY8">
+                                                    <rect key="frame" x="169.5" y="11.5" width="66.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upR-7b-SVw">
-                                                    <rect key="frame" x="306.5" y="11.5" width="87.5" height="21"/>
+                                                    <rect key="frame" x="244" y="11.5" width="150" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="6eX-bF-pmS"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -283,7 +294,6 @@
                                                 <constraint firstItem="dln-GJ-bY8" firstAttribute="centerY" secondItem="ycu-aU-vJH" secondAttribute="centerY" id="aag-UN-5M4"/>
                                                 <constraint firstItem="2Gy-gI-GVI" firstAttribute="centerY" secondItem="ycu-aU-vJH" secondAttribute="centerY" id="c3n-zk-Khr"/>
                                                 <constraint firstItem="gAT-gF-pep" firstAttribute="leading" secondItem="2Gy-gI-GVI" secondAttribute="trailing" constant="8" id="df1-JR-fQO"/>
-                                                <constraint firstItem="upR-7b-SVw" firstAttribute="width" secondItem="2Gy-gI-GVI" secondAttribute="width" id="lw5-12-Fxf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -318,6 +328,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UoE-1P-gVG" id="rx2-pM-vhc"/>
+                                    <outlet property="delegate" destination="UoE-1P-gVG" id="d7l-0r-q76"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-iW-59H">
                                 <rect key="frame" x="0.0" y="832" width="414" height="64"/>
