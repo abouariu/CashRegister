@@ -66,4 +66,12 @@ struct Calculator {
         return getTotalValueWithoutTaxes() * stateTax.tax / 100.0
     }
     
+    /**
+     Determines the total value, considering discounts and taxes (final price).
+     Returns: final price (Double)
+     */
+    func getTotal() -> Double {
+        return getTotalValueWithoutTaxes() - getDiscountValue() + getTaxesValue()
+    }
+    
 }

@@ -32,7 +32,7 @@ class CalculatorTests: XCTestCase {
         anotherCalculator = nil
     }
     
-    func testDiscount() {
+    func testItemsDiscount() {
         guard let aCalculator = aCalculator else {
             XCTFail()
             return
@@ -72,6 +72,20 @@ class CalculatorTests: XCTestCase {
             return
         }
         XCTAssertEqual(anotherCalculator.getTaxesValue(), 19701.0, accuracy: 0.000000001)
+    }
+    
+    func testItemsTotalValue() {
+        guard let aCalculator = aCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(aCalculator.getTotal(), 13642393.8, accuracy: 0.000000001)
+        
+        guard let anotherCalculator = anotherCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(anotherCalculator.getTotal(), 224661.0, accuracy: 0.000000001)
     }
 
 }
