@@ -14,6 +14,10 @@
 		67221AC722D49F5700510539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67221AC522D49F5700510539 /* LaunchScreen.storyboard */; };
 		67221AD222D49F5700510539 /* CashRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221AD122D49F5700510539 /* CashRegisterTests.swift */; };
 		67221ADD22D49F5700510539 /* CashRegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221ADC22D49F5700510539 /* CashRegisterUITests.swift */; };
+		67221AEB22D4A06600510539 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221AEA22D4A06600510539 /* CalculatorTests.swift */; };
+		67221AED22D4A07D00510539 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221AEC22D4A07D00510539 /* Calculator.swift */; };
+		67221AEF22D4A0E500510539 /* StateTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221AEE22D4A0E500510539 /* StateTax.swift */; };
+		67221AF122D4A47C00510539 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67221AF022D4A47C00510539 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		67221AD822D49F5700510539 /* CashRegisterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashRegisterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67221ADC22D49F5700510539 /* CashRegisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterUITests.swift; sourceTree = "<group>"; };
 		67221ADE22D49F5700510539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67221AEA22D4A06600510539 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		67221AEC22D4A07D00510539 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		67221AEE22D4A0E500510539 /* StateTax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTax.swift; sourceTree = "<group>"; };
+		67221AF022D4A47C00510539 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				67221ABC22D49F5500510539 /* AppDelegate.swift */,
+				67221AF022D4A47C00510539 /* Item.swift */,
+				67221AEE22D4A0E500510539 /* StateTax.swift */,
 				67221ABE22D49F5500510539 /* ViewController.swift */,
+				67221AEC22D4A07D00510539 /* Calculator.swift */,
 				67221AC022D49F5500510539 /* Main.storyboard */,
 				67221AC322D49F5700510539 /* Assets.xcassets */,
 				67221AC522D49F5700510539 /* LaunchScreen.storyboard */,
@@ -111,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				67221AD122D49F5700510539 /* CashRegisterTests.swift */,
+				67221AEA22D4A06600510539 /* CalculatorTests.swift */,
 				67221AD322D49F5700510539 /* Info.plist */,
 			);
 			path = CashRegisterTests;
@@ -256,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67221AF122D4A47C00510539 /* Item.swift in Sources */,
 				67221ABF22D49F5500510539 /* ViewController.swift in Sources */,
 				67221ABD22D49F5500510539 /* AppDelegate.swift in Sources */,
+				67221AED22D4A07D00510539 /* Calculator.swift in Sources */,
+				67221AEF22D4A0E500510539 /* StateTax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67221AD222D49F5700510539 /* CashRegisterTests.swift in Sources */,
+				67221AEB22D4A06600510539 /* CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
