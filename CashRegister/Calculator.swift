@@ -17,6 +17,10 @@ struct Calculator {
         self.stateTax = stateTax
     }
     
+    /**
+     Determines the total discount value for all items.
+     Returns: discount value (Double)
+     */
     func getDiscountValue() -> Double {
         var totalDiscountValue = 0.0
         for item in items {
@@ -44,5 +48,13 @@ struct Calculator {
             totalDiscountValue = totalDiscountValue + itemDiscountValue
         }
         return totalDiscountValue
+    }
+    
+    /**
+     Determines the total value for all items, excluding taxes.
+     Returns: total value without taxes (Double)
+     */
+    func getTotalValueWithoutTaxes() -> Double {
+        return items.reduce(0, { $0 + $1.0.price * Double($1.1) })
     }
 }

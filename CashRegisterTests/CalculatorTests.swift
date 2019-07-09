@@ -12,35 +12,53 @@ import XCTest
 
 class CalculatorTests: XCTestCase {
 
-    var calculator: Calculator?
+    var aCalculator: Calculator?
+    var anotherCalculator: Calculator?
     
     override func setUp() {
-    }
-
-    override func tearDown() {
-        calculator = nil
-    }
-    
-    func testDiscount() {
-        calculator = Calculator(items: [
+        aCalculator = Calculator(items: [
             (Item(label: "CPU", price: 799.9), 2000), //1599800 at 3% = 47994
             (Item(label: "GPU", price: 1199.9), 10000) //11999000 at 7% = 839930
             ], stateTax: StateTax("UT", 6.85))
-        guard let calculator1 = calculator else {
-            XCTFail()
-            return
-        }
-        XCTAssertEqual(calculator1.getDiscountValue(), 887924.0, accuracy: 0.000000001)
         
-        calculator = Calculator(items: [
+        anotherCalculator = Calculator(items: [
             (Item(label: "Pencil", price: 0.99), 40000), //39600 at 10% = 3960
             (Item(label: "Ballpen", price: 2.49), 80000) //199200 at 15% = 29880
             ], stateTax: StateTax("UT", 6.85))
-        guard let calculator2 = calculator else {
+    }
+
+    override func tearDown() {
+        aCalculator = nil
+        anotherCalculator = nil
+    }
+    
+    func testDiscount() {
+        guard let aCalculator = aCalculator else {
             XCTFail()
             return
         }
-        XCTAssertEqual(calculator2.getDiscountValue(), 33840.0, accuracy: 0.000000001)
+        XCTAssertEqual(aCalculator.getDiscountValue(), 887924.0, accuracy: 0.000000001)
+        
+        guard let anotherCalculator = anotherCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(anotherCalculator.getDiscountValue(), 33840.0, accuracy: 0.000000001)
+    }
+    
+    func testItemsValueWithoutTaxes() {
+        guard let aCalculator = aCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(aCalculator.getTotalValueWithoutTaxes(), 13598800.0, accuracy: 0.000000001)
+        
+        guard let anotherCalculator = anotherCalculator else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(anotherCalculator.getTotalValueWithoutTaxes(), 238800.0, accuracy: 0.000000001)
+        
     }
 
 }
