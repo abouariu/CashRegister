@@ -33,3 +33,7 @@ During checkout, a discount is automatically applied based on items quantity:
 	Quantity > 7000 applies 7% discount
 	Quantity > 10000 applies 10% discount
 	Quantity > 50000 applies 15% discount
+
+The discount is applied in each group of items individually (i.e for 3000 pencils and 14000 ballpens, it applies a 3% discount to the pencils value and a 10% discount to the ballpens value)
+
+The state tax is applied on the total value.
